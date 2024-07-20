@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/bottom_nav_bar.dart';
 import 'cart_page.dart';
-import 'category_page.dart';
+import 'popular_products_page.dart';
 import 'profile_page.dart';
 import 'entry_page.dart';
 

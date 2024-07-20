@@ -15,7 +15,7 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
   String _email = '';
   String _password = '';
 
-  final String _hardcodedEmail = 'beneil@example.com';
+  final String _hardcodedEmail = 'bineil@example.com';
   final String _hardcodedPassword = 'password123';
 
 
