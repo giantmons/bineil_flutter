@@ -47,10 +47,8 @@ class _HomePageState extends State<HomePage> {
         },
       ),
     ).then((value) {
-
       setState(() {
-        _selectedIndex =
-            0; 
+        _selectedIndex = 0;
       });
     });
   }
@@ -58,14 +56,16 @@ class _HomePageState extends State<HomePage> {
   final List<Widget> _pages = [
     EntryPage(),
     const CategoryPage(),
-    Container(), 
+    Container(),
     const ProfilePage(),
   ];
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       bottomNavigationBar: _selectedIndex != 2
           ? MyBottomNavBar(
               onTabChange: (index) => navigateBottomBar(index),

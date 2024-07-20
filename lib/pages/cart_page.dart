@@ -13,20 +13,22 @@ class CartPage extends StatefulWidget {
 class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: colorScheme.primary,
         title: Text(
           'MY CART',
           style: GoogleFonts.montserrat(
             fontSize: 16,
-            color: Colors.white,
+            color: colorScheme.secondary,
           ),
         ),
         centerTitle: true,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.white),
+          icon: Icon(Icons.arrow_back, color: colorScheme.secondary),
           onPressed: () {
             Navigator.push(context,
                 MaterialPageRoute(builder: (context) => const HomePage()));
@@ -70,11 +72,11 @@ class _CartPageState extends State<CartPage> {
         ),
       ),
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Colors.black,
+        decoration: BoxDecoration(
+          color: colorScheme.primary,
           border: Border(
             top: BorderSide(
-              color: Colors.white,
+              color: colorScheme.secondary,
               width: 1.0,
             ),
           ),
@@ -102,7 +104,7 @@ class _CartPageState extends State<CartPage> {
                       Text(
                         'PHP 0.00',
                         style: GoogleFonts.montserrat(
-                            fontSize: 16, color: Colors.white),
+                            fontSize: 16, color: colorScheme.secondary),
                       )
                     ],
                   ),
@@ -129,7 +131,7 @@ class _CartPageState extends State<CartPage> {
                         'Checkout',
                         style: GoogleFonts.montserrat(
                           fontSize: 16,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                         ),
                       ),
                     ),
@@ -186,6 +188,8 @@ class _CartItemState extends State<CartItem> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Dismissible(
       key:
           UniqueKey(), // Use UniqueKey for Dismissible to distinguish between items
@@ -195,9 +199,9 @@ class _CartItemState extends State<CartItem> {
         color: Colors.red, // Background color when swiping
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.only(right: 20.0),
-        child: const Icon(
+        child: Icon(
           Icons.delete,
-          color: Colors.white,
+          color: colorScheme.secondary,
         ),
       ),
       onDismissed: (direction) {
@@ -211,6 +215,8 @@ class _CartItemState extends State<CartItem> {
   }
 
   Widget buildCartItem() {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
       child: Center(
@@ -219,7 +225,7 @@ class _CartItemState extends State<CartItem> {
           decoration: BoxDecoration(
             border: Border.all(
               width: 1,
-              color: Colors.white,
+              color: colorScheme.secondary,
             ),
           ),
           child: Row(
@@ -228,7 +234,9 @@ class _CartItemState extends State<CartItem> {
               IconButton(
                 icon: Icon(
                   _isSelected ? Icons.check_box : Icons.check_box_outline_blank,
-                  color: _isSelected ? Colors.white : Colors.grey.shade800,
+                  color: _isSelected
+                      ? colorScheme.secondary
+                      : Colors.grey.shade800,
                 ),
                 iconSize: 23,
                 onPressed: _toggleSelect,
@@ -249,7 +257,7 @@ class _CartItemState extends State<CartItem> {
                         widget.name,
                         style: GoogleFonts.montserrat(
                           fontSize: 16,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                         ),
                       ),
                     ),
@@ -269,17 +277,17 @@ class _CartItemState extends State<CartItem> {
                             widget.price,
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                           const Spacer(),
                           Row(
                             children: [
                               IconButton(
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.remove,
                                   size: 20,
-                                  color: Colors.white,
+                                  color: colorScheme.secondary,
                                 ),
                                 onPressed: _decrement,
                               ),
@@ -287,14 +295,14 @@ class _CartItemState extends State<CartItem> {
                                 '$_counter',
                                 style: GoogleFonts.montserrat(
                                   fontSize: 14,
-                                  color: Colors.white,
+                                  color: colorScheme.secondary,
                                 ),
                               ),
                               IconButton(
-                                icon: const Icon(
+                                icon: Icon(
                                   Icons.add,
                                   size: 20,
-                                  color: Colors.white,
+                                  color: colorScheme.secondary,
                                 ),
                                 onPressed: _increment,
                               ),

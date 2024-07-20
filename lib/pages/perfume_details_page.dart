@@ -27,15 +27,18 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
     showDialog(
       context: context,
       builder: (BuildContext context) {
+        final theme = Theme.of(context);
+        final colorScheme = theme.colorScheme;
         return AlertDialog(
-          backgroundColor: Colors.black,
+          backgroundColor: colorScheme.primary,
           title: Text(
             'Enter your question',
-            style: GoogleFonts.montserrat(color: Colors.white, fontSize: 16),
+            style: GoogleFonts.montserrat(
+                color: colorScheme.secondary, fontSize: 16),
           ),
           content: TextField(
             style: GoogleFonts.montserrat(
-              color: Colors.white,
+              color: colorScheme.secondary,
               fontSize: 16,
             ),
             controller: _textController,
@@ -50,8 +53,8 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
             TextButton(
               child: Text(
                 'Cancel',
-                style:
-                    GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+                style: GoogleFonts.montserrat(
+                    fontSize: 16, color: colorScheme.secondary),
               ),
               onPressed: () {
                 Navigator.of(context).pop();
@@ -60,8 +63,8 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
             TextButton(
               child: Text(
                 'Enter',
-                style:
-                    GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+                style: GoogleFonts.montserrat(
+                    fontSize: 16, color: colorScheme.secondary),
               ),
               onPressed: () {},
             ),
@@ -73,12 +76,14 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
-        foregroundColor: Colors.white,
+        foregroundColor: colorScheme.secondary,
         title: Center(
           child: Text(
             'PRODUCT DETAILS',
@@ -127,7 +132,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                           Text(
                             widget.perfume.name,
                             style: GoogleFonts.montserrat(
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                               fontSize: 16,
                             ),
                           ),
@@ -135,7 +140,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                             widget.perfume.price,
                             style: GoogleFonts.montserrat(
                               fontSize: 16,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                         ],
@@ -158,7 +163,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                         'Size:   ',
                         style: GoogleFonts.montserrat(
                           fontSize: 14,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                         ),
                       ),
                       Container(
@@ -175,7 +180,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                             widget.perfume.size,
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                         ),
@@ -189,7 +194,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                   child: Text(
                     'Description',
                     style: GoogleFonts.montserrat(
-                      color: Colors.white,
+                      color: colorScheme.secondary,
                       fontWeight: FontWeight.bold,
                       fontSize: 14,
                     ),
@@ -218,7 +223,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                           'Customer Review',
                           style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                               fontWeight: FontWeight.bold),
                         ),
                         const SizedBox(width: 6),
@@ -247,16 +252,16 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Padding(
+                        Padding(
                           padding: EdgeInsets.all(16.0),
                           child: CircleAvatar(
                             radius: 20, // Adjust radius as needed
-                            backgroundColor:
-                                Colors.white, // Background color of the circle
+                            backgroundColor: colorScheme
+                                .secondary, // Background color of the circle
                             child: Icon(
                               Icons.person,
                               size: 30, // Adjust size as needed
-                              color: Colors.black, // Icon color
+                              color: colorScheme.primary, // Icon color
                             ),
                           ),
                         ),
@@ -292,11 +297,11 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
         ],
       ),
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Colors.black,
+        decoration: BoxDecoration(
+          color: colorScheme.primary,
           border: Border(
             top: BorderSide(
-              color: Colors.white,
+              color: colorScheme.secondary,
               width: 1.0,
             ),
           ),
@@ -320,7 +325,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                       isFavorite
                           ? CupertinoIcons.heart_fill
                           : CupertinoIcons.heart,
-                      color: Colors.white,
+                      color: colorScheme.secondary,
                       size: 30,
                     ),
                   ),
@@ -347,7 +352,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                         'Add to Cart',
                         style: GoogleFonts.montserrat(
                           fontSize: 16,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                         ),
                       ),
                     ),

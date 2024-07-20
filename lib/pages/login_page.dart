@@ -18,7 +18,6 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
   final String _hardcodedEmail = 'bineil@example.com';
   final String _hardcodedPassword = 'password123';
 
-
   void _showLoginErrorDialog(BuildContext context, String message) {
     showDialog(
       context: context,
@@ -43,7 +42,8 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
       if (_email == _hardcodedEmail && _password == _hardcodedPassword) {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => const HomePage()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => const HomePage()));
       } else {
         _showLoginErrorDialog(context, 'Invalid email or password.');
       }
@@ -52,8 +52,10 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       body: SingleChildScrollView(
         child: Container(
           padding: const EdgeInsets.all(16.0),
@@ -69,7 +71,7 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
                     fontSize: 128,
                     fontWeight: FontWeight.w600,
                     letterSpacing: -20,
-                    color: Colors.white,
+                    color: colorScheme.secondary,
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -80,18 +82,18 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
                     hintStyle: GoogleFonts.montserrat(
                         color: Colors.grey, fontSize: 14),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.1),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    fillColor: colorScheme.secondary.withOpacity(0.1),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
                   ),
-                  style: GoogleFonts.montserrat(color: Colors.white),
+                  style: GoogleFonts.montserrat(color: colorScheme.secondary),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your email';
@@ -112,20 +114,20 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
                     hintStyle: GoogleFonts.montserrat(
                         color: Colors.grey, fontSize: 14),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.1),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    fillColor: colorScheme.secondary.withOpacity(0.1),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
                     suffixIcon:
                         const Icon(Icons.visibility_off, color: Colors.grey),
                   ),
-                  style: GoogleFonts.montserrat(color: Colors.white),
+                  style: GoogleFonts.montserrat(color: colorScheme.secondary),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
                       return 'Please enter your password';
@@ -147,8 +149,8 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
                           _rememberMe = value!;
                         });
                       },
-                      activeColor: Colors.white,
-                      checkColor: Colors.black,
+                      activeColor: colorScheme.secondary,
+                      checkColor: colorScheme.primary,
                     ),
                     Expanded(
                       child: Text(
@@ -164,14 +166,16 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(0), // Rectangle shape
-                      side: const BorderSide(color: Colors.white), // Border color
+                      side: BorderSide(
+                          color: colorScheme.secondary), // Border color
                     ),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 8),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 36.0, vertical: 8),
                     child: Text('SIGN IN',
                         style: GoogleFonts.montserrat(
-                            color: Colors.black, fontSize: 14)),
+                            color: colorScheme.primary, fontSize: 14)),
                   ),
                   onPressed: () => _handleLogin(context),
                 ),
@@ -183,9 +187,14 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
                         style: GoogleFonts.montserrat(color: Colors.grey)),
                     TextButton(
                       child: Text('Sign Up Here',
-                          style: GoogleFonts.montserrat(color: Colors.white)),
+                          style: GoogleFonts.montserrat(
+                              color: colorScheme.secondary)),
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => const BeneilSignUpForm()));
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    const BeneilSignUpForm()));
                       },
                     ),
                   ],
@@ -199,7 +208,6 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
   }
 }
 
-
 class BeneilSignUpForm extends StatefulWidget {
   const BeneilSignUpForm({super.key});
 
@@ -211,7 +219,8 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
   final TextEditingController usernameController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  final TextEditingController confirmPasswordController = TextEditingController();
+  final TextEditingController confirmPasswordController =
+      TextEditingController();
   final _formKey = GlobalKey<FormState>();
 
   String? _validateEmail(String? value) {
@@ -266,11 +275,13 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
+        backgroundColor: colorScheme.primary,
+        foregroundColor: colorScheme.secondary,
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -283,24 +294,28 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
                 const SizedBox(height: 75),
                 Text(
                   'CREATE ACCOUNT',
-                  style: GoogleFonts.montserrat(color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.montserrat(
+                      color: colorScheme.secondary,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 36),
                 TextFormField(
                   controller: usernameController,
                   decoration: InputDecoration(
                     hintText: 'Username',
-                    hintStyle: GoogleFonts.montserrat(color: Colors.grey, fontSize: 14),
+                    hintStyle: GoogleFonts.montserrat(
+                        color: Colors.grey, fontSize: 14),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.1),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    fillColor: colorScheme.secondary.withOpacity(0.1),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
                   ),
                 ),
@@ -309,17 +324,18 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
                   controller: emailController,
                   decoration: InputDecoration(
                     hintText: 'Email',
-                    hintStyle: GoogleFonts.montserrat(color: Colors.grey, fontSize: 14),
+                    hintStyle: GoogleFonts.montserrat(
+                        color: Colors.grey, fontSize: 14),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.1),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    fillColor: colorScheme.secondary.withOpacity(0.1),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
                   ),
                   validator: _validateEmail,
@@ -330,19 +346,20 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
                   obscureText: true,
                   decoration: InputDecoration(
                     hintText: 'Password',
-                    hintStyle: GoogleFonts.montserrat(color: Colors.grey, fontSize: 14),
+                    hintStyle: GoogleFonts.montserrat(
+                        color: Colors.grey, fontSize: 14),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.1),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    fillColor: colorScheme.secondary.withOpacity(0.1),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    suffixIcon: const Icon(Icons.visibility_off, color: Colors.grey),
+                    suffixIcon: Icon(Icons.visibility_off, color: Colors.grey),
                   ),
                   validator: _validatePassword,
                 ),
@@ -352,19 +369,21 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
                   obscureText: true,
                   decoration: InputDecoration(
                     hintText: 'Confirm Password',
-                    hintStyle: GoogleFonts.montserrat(color: Colors.grey, fontSize: 14),
+                    hintStyle: GoogleFonts.montserrat(
+                        color: Colors.grey, fontSize: 14),
                     filled: true,
-                    fillColor: Colors.white.withOpacity(0.1),
-                    border: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    fillColor: colorScheme.secondary.withOpacity(0.1),
+                    border: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(color: Colors.white),
+                    focusedBorder: OutlineInputBorder(
+                      borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    suffixIcon: const Icon(Icons.visibility_off, color: Colors.grey),
+                    suffixIcon:
+                        const Icon(Icons.visibility_off, color: Colors.grey),
                   ),
                   validator: _validateConfirmPassword,
                 ),
@@ -373,11 +392,17 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(0), // Rectangle shape
-                      side: const BorderSide(color: Colors.white), // Border color
+                      side: BorderSide(
+                          color: colorScheme.secondary), // Border color
                     ),
-                    padding: const EdgeInsets.symmetric(horizontal: 36.0, vertical: 16.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 36.0, vertical: 16.0),
                   ),
-                  child: Text('Create Account', style: GoogleFonts.montserrat(fontSize: 14, color: Colors.black),),
+                  child: Text(
+                    'Create Account',
+                    style: GoogleFonts.montserrat(
+                        fontSize: 14, color: colorScheme.primary),
+                  ),
                   onPressed: () {
                     if (_formKey.currentState!.validate()) {
                       _saveCredentials();
@@ -389,9 +414,13 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Already have an account? ", style: GoogleFonts.montserrat(color: Colors.grey, fontSize: 14)),
+                    Text("Already have an account? ",
+                        style: GoogleFonts.montserrat(
+                            color: Colors.grey, fontSize: 14)),
                     TextButton(
-                      child: Text('Sign In here', style: GoogleFonts.montserrat(color: Colors.white, fontSize: 14)),
+                      child: Text('Sign In here',
+                          style: GoogleFonts.montserrat(
+                              color: colorScheme.secondary, fontSize: 14)),
                       onPressed: () {
                         Navigator.pop(context);
                       },
@@ -412,4 +441,3 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
     print('Password: ${passwordController.text}');
   }
 }
-

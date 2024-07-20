@@ -495,8 +495,11 @@ final List<Perfume> perfumeList = [
 
   @override
   Widget build(BuildContext context) {
+        final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -505,14 +508,14 @@ final List<Perfume> perfumeList = [
               child: Container(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: BoxDecoration(
-                  border: Border.all(color: Colors.white),
+                  border: Border.all(color: colorScheme.secondary),
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Row(
                   children: [
-                    const Icon(
+                     Icon(
                       CupertinoIcons.search,
-                      color: Colors.white,
+                      color: colorScheme.secondary,
                     ),
                     Expanded(
                       child: Padding(
@@ -527,14 +530,14 @@ final List<Perfume> perfumeList = [
                           ),
                           style: GoogleFonts.montserrat(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: colorScheme.secondary,
                           ),
                         ),
                       ),
                     ),
-                    const Icon(
+                     Icon(
                       CupertinoIcons.camera,
-                      color: Colors.white,
+                      color: colorScheme.secondary,
                     ),
                   ],
                 ),
@@ -550,9 +553,9 @@ final List<Perfume> perfumeList = [
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                 Text(
                     'MEN PERFUMES',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: colorScheme.secondary, fontSize: 14),
                   ),
                   InkWell(
                     onTap: () => navigateToCategoryPage(context, 'male'),
@@ -584,9 +587,9 @@ final List<Perfume> perfumeList = [
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'FEMALE PERFUMES',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: colorScheme.secondary, fontSize: 14),
                   ),
                   InkWell(
                     onTap: () => navigateToCategoryPage(context, 'female'),
@@ -624,9 +627,9 @@ final List<Perfume> perfumeList = [
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text(
+                  Text(
                     'UNISEX PERFUMES',
-                    style: TextStyle(color: Colors.white, fontSize: 14),
+                    style: TextStyle(color: colorScheme.secondary, fontSize: 14),
                   ),
                   InkWell(
                     onTap: () => navigateToCategoryPage(context, 'unisex'),
@@ -674,22 +677,24 @@ class MenPerfumesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
+        foregroundColor: colorScheme.secondary,
+        backgroundColor: colorScheme.primary,
         title: Center(
           child: Text(
             'Men Perfumes',
-            style: GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+            style: GoogleFonts.montserrat(fontSize: 16, color: colorScheme.secondary),
           ),
         ),
         bottom: PreferredSize(
           preferredSize:
               const Size.fromHeight(4.0), 
           child: Container(
-            color: Colors.white, 
+            color: colorScheme.secondary, 
             height: 1.0, 
           ),
         ),
@@ -732,22 +737,24 @@ class WomenPerfumesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
+        foregroundColor: colorScheme.secondary,
+        backgroundColor: colorScheme.primary,
         title: Center(
           child: Text(
             'Female Perfumes',
-            style: GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+            style: GoogleFonts.montserrat(fontSize: 16, color: colorScheme.secondary),
           ),
         ),
         bottom: PreferredSize(
           preferredSize:
               const Size.fromHeight(4.0), 
           child: Container(
-            color: Colors.white, 
+            color: colorScheme.secondary, 
             height: 1.0,
           ),
         ),
@@ -790,22 +797,24 @@ class UnisexPerfumesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
+        foregroundColor: colorScheme.secondary,
+        backgroundColor: colorScheme.primary,
         title: Center(
           child: Text(
             'Men Perfumes',
-            style: GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+            style: GoogleFonts.montserrat(fontSize: 16, color: colorScheme.secondary),
           ),
         ),
         bottom: PreferredSize(
           preferredSize:
               const Size.fromHeight(4.0), 
           child: Container(
-            color: Colors.white, 
+            color: colorScheme.secondary, 
             height: 1.0, 
           ),
         ),
@@ -860,6 +869,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
 
   @override
   Widget build(BuildContext context) {
+        final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Column(
       children: [
         CarouselSlider(
@@ -881,8 +892,8 @@ class _ImageCarouselState extends State<ImageCarousel> {
                 return Container(
                   width: MediaQuery.of(context).size.width,
                   margin: const EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: const BoxDecoration(
-                    color: Colors.black,
+                  decoration: BoxDecoration(
+                    color: colorScheme.primary,
                   ),
                   child: Image.asset(
                     assetPath,

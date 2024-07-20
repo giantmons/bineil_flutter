@@ -7,16 +7,18 @@ class OrderDetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        foregroundColor: Colors.white,
-        backgroundColor: Colors.black,
+        foregroundColor: colorScheme.secondary,
+        backgroundColor: colorScheme.primary,
         title: Text(
           "ORDER DETAILS",
           style: GoogleFonts.montserrat(
             fontSize: 16,
-            color: Colors.white,
+            color: colorScheme.secondary,
           ),
         ),
         centerTitle: true,
@@ -31,7 +33,7 @@ class OrderDetailsPage extends StatelessWidget {
                 width: double.infinity,
                 height: 150,
                 decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.white),
+                  border: Border.all(width: 1, color: colorScheme.secondary),
                 ),
                 child: Row(
                   children: [
@@ -48,7 +50,7 @@ class OrderDetailsPage extends StatelessWidget {
                             'Libre Le Parfum',
                             style: GoogleFonts.montserrat(
                               fontSize: 16,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                           Text(
@@ -63,7 +65,7 @@ class OrderDetailsPage extends StatelessWidget {
                             'Order ID: 12312321421',
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                         ],
@@ -102,7 +104,7 @@ class OrderDetailsPage extends StatelessWidget {
                           'Rm. 202 Buendia Shopping Plaza Gil Puyat Avenue 1200, Makati City, Metro Manila, Philippines',
                           style: GoogleFonts.montserrat(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: colorScheme.secondary,
                           ),
                           overflow: TextOverflow.visible,
                           softWrap: true,
@@ -136,7 +138,7 @@ class OrderDetailsPage extends StatelessWidget {
                           'Unit 308, 3/F FEMII Building, A. Soriano Jr. Avenue, Manila, Metro Manila, Philippines',
                           style: GoogleFonts.montserrat(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: colorScheme.secondary,
                           ),
                           overflow: TextOverflow.visible,
                           softWrap: true,
@@ -170,7 +172,7 @@ class OrderDetailsPage extends StatelessWidget {
                           '1.45 kg',
                           style: GoogleFonts.montserrat(
                             fontSize: 14,
-                            color: Colors.white,
+                            color: colorScheme.secondary,
                           ),
                           overflow: TextOverflow.visible,
                           softWrap: true,
@@ -219,6 +221,8 @@ class HorizontalProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: icons.asMap().entries.map((entry) {
@@ -234,7 +238,7 @@ class HorizontalProgressBar extends StatelessWidget {
               child: Icon(
                 icon,
                 size: 25,
-                color: Colors.white,
+                color: colorScheme.secondary,
               ),
             ),
             if (index < icons.length - 1)

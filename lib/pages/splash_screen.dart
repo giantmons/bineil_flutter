@@ -41,8 +41,11 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
-      backgroundColor: Colors.white, 
+      backgroundColor: colorScheme.secondary,
       body: Center(
         child: FadeTransition(
           opacity: _animation,
@@ -52,7 +55,7 @@ class _SplashScreenState extends State<SplashScreen>
               fontSize: 128,
               fontWeight: FontWeight.w600,
               letterSpacing: -20,
-              color: Colors.black, 
+              color: colorScheme.primary,
             ),
             textAlign: TextAlign.center,
           ),

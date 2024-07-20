@@ -18,24 +18,28 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       body: ListView(
         children: [
           const SizedBox(height: 30.0),
           Center(
             child: Text(
               'PROFILE SETTING',
-              style: GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+              style: GoogleFonts.montserrat(
+                  fontSize: 16, color: colorScheme.secondary),
             ),
           ),
           const SizedBox(height: 30.0),
           Container(
             width: 100,
             height: 100,
-            decoration: const BoxDecoration(
+            decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.white,
+              color: colorScheme.secondary,
             ),
             child: Center(
               child: ClipOval(
@@ -52,7 +56,8 @@ class _ProfilePageState extends State<ProfilePage> {
           Center(
             child: Text(
               'Jhoanna Christine Robles',
-              style: GoogleFonts.montserrat(color: Colors.white, fontSize: 16),
+              style: GoogleFonts.montserrat(
+                  color: colorScheme.secondary, fontSize: 16),
             ),
           ),
           Center(
@@ -88,12 +93,12 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(CupertinoIcons.cube_box,
-                              size: 30, color: Colors.white),
+                          Icon(CupertinoIcons.cube_box,
+                              size: 30, color: colorScheme.secondary),
                           const SizedBox(height: 8),
                           Text('Orders',
                               style: GoogleFonts.montserrat(
-                                  fontSize: 14, color: Colors.white)),
+                                  fontSize: 14, color: colorScheme.secondary)),
                         ],
                       ),
                     ),
@@ -119,12 +124,12 @@ class _ProfilePageState extends State<ProfilePage> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          const Icon(CupertinoIcons.heart,
-                              size: 30, color: Colors.white),
+                          Icon(CupertinoIcons.heart,
+                              size: 30, color: colorScheme.secondary),
                           const SizedBox(height: 8),
                           Text('Wishlist',
                               style: GoogleFonts.montserrat(
-                                  fontSize: 14, color: Colors.white)),
+                                  fontSize: 14, color: colorScheme.secondary)),
                         ],
                       ),
                     ),
@@ -139,7 +144,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Text(
               'General Information',
               style: GoogleFonts.montserrat(
-                color: Colors.white,
+                color: colorScheme.secondary,
                 fontSize: 16,
               ),
             ),
@@ -160,19 +165,19 @@ class _ProfilePageState extends State<ProfilePage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
-                      leading: const Icon(
+                      leading: Icon(
                         CupertinoIcons.person,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                         size: 30,
                       ),
                       title: Text(
                         '   Jhoanna Christine Robles',
                         style: GoogleFonts.montserrat(
-                            fontSize: 14, color: Colors.white),
+                            fontSize: 14, color: colorScheme.secondary),
                       ),
-                      trailing: const Icon(
+                      trailing: Icon(
                         CupertinoIcons.chevron_right,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                         size: 30,
                       ),
                     ),
@@ -184,19 +189,19 @@ class _ProfilePageState extends State<ProfilePage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
-                      leading: const Icon(
+                      leading: Icon(
                         CupertinoIcons.mail,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                         size: 30,
                       ),
                       title: Text(
                         '   jhoannarob143@gmail.com',
                         style: GoogleFonts.montserrat(
-                            fontSize: 14, color: Colors.white),
+                            fontSize: 14, color: colorScheme.secondary),
                       ),
-                      trailing: const Icon(
+                      trailing: Icon(
                         CupertinoIcons.chevron_right,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                         size: 30,
                       ),
                     ),
@@ -208,19 +213,19 @@ class _ProfilePageState extends State<ProfilePage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
-                      leading: const Icon(
+                      leading: Icon(
                         CupertinoIcons.phone,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                         size: 30,
                       ),
                       title: Text(
                         '   (63+) 123 456 7890',
                         style: GoogleFonts.montserrat(
-                            fontSize: 14, color: Colors.white),
+                            fontSize: 14, color: colorScheme.secondary),
                       ),
-                      trailing: const Icon(
+                      trailing: Icon(
                         CupertinoIcons.chevron_right,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                         size: 30,
                       ),
                     ),
@@ -232,19 +237,19 @@ class _ProfilePageState extends State<ProfilePage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
-                      leading: const Icon(
+                      leading: Icon(
                         CupertinoIcons.chat_bubble,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                         size: 30,
                       ),
                       title: Text(
                         '   Feedback',
                         style: GoogleFonts.montserrat(
-                            fontSize: 14, color: Colors.white),
+                            fontSize: 14, color: colorScheme.secondary),
                       ),
-                      trailing: const Icon(
+                      trailing: Icon(
                         CupertinoIcons.chevron_right,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                         size: 30,
                       ),
                     ),
@@ -259,7 +264,7 @@ class _ProfilePageState extends State<ProfilePage> {
             child: Text(
               'Notification',
               style: GoogleFonts.montserrat(
-                color: Colors.white,
+                color: colorScheme.secondary,
                 fontSize: 16,
               ),
             ),
@@ -280,15 +285,15 @@ class _ProfilePageState extends State<ProfilePage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
-                        leading: const Icon(
+                        leading: Icon(
                           CupertinoIcons.bell,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                           size: 30,
                         ),
                         title: Text(
                           '   Push Notifications',
                           style: GoogleFonts.montserrat(
-                              fontSize: 14, color: Colors.white),
+                              fontSize: 14, color: colorScheme.secondary),
                         ),
                         trailing: OnOffToggle()),
                   ),
@@ -299,15 +304,15 @@ class _ProfilePageState extends State<ProfilePage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: ListTile(
-                        leading: const Icon(
+                        leading: Icon(
                           CupertinoIcons.device_phone_portrait,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                           size: 30,
                         ),
                         title: Text(
                           '   SMS Notifications',
                           style: GoogleFonts.montserrat(
-                              fontSize: 14, color: Colors.white),
+                              fontSize: 14, color: colorScheme.secondary),
                         ),
                         trailing: OnOffToggle()),
                   ),
@@ -328,8 +333,8 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Center(
                 child: Text(
                   'SIGN OUT',
-                  style:
-                      GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+                  style: GoogleFonts.montserrat(
+                      fontSize: 16, color: colorScheme.secondary),
                 ),
               ),
             ),
@@ -397,15 +402,19 @@ class MyCartPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
+        backgroundColor: colorScheme.primary,
+        foregroundColor: colorScheme.secondary,
         centerTitle: true,
         title: Text(
           'MY ORDERS',
-          style: GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+          style: GoogleFonts.montserrat(
+              fontSize: 16, color: colorScheme.secondary),
         ),
       ),
       body: Column(
@@ -423,7 +432,7 @@ class MyCartPage extends StatelessWidget {
                 width: double.infinity,
                 height: 150,
                 decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.white),
+                  border: Border.all(width: 1, color: colorScheme.secondary),
                 ),
                 child: Row(
                   children: [
@@ -440,7 +449,7 @@ class MyCartPage extends StatelessWidget {
                             'Libre Le Parfum',
                             style: GoogleFonts.montserrat(
                               fontSize: 16,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                           Text(
@@ -455,7 +464,7 @@ class MyCartPage extends StatelessWidget {
                             'Order ID: 12312321421',
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                         ],
@@ -561,15 +570,19 @@ class MyWishlistPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
+        backgroundColor: colorScheme.primary,
+        foregroundColor: colorScheme.secondary,
         centerTitle: true,
         title: Text(
           'MY WISHLIST',
-          style: GoogleFonts.montserrat(fontSize: 16, color: Colors.white),
+          style: GoogleFonts.montserrat(
+              fontSize: 16, color: colorScheme.secondary),
         ),
       ),
       body: Column(
@@ -604,8 +617,11 @@ class FavoritePerfumesPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       body: GridView.builder(
         padding: const EdgeInsets.all(8.0),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

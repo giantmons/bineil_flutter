@@ -9,12 +9,14 @@ class CheckOutPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: colorScheme.primary,
         elevation: 0,
-        foregroundColor: Colors.white,
+        foregroundColor: colorScheme.secondary,
         title: Text(
           'CHECK OUT',
           style: GoogleFonts.montserrat(
@@ -32,16 +34,16 @@ class CheckOutPage extends StatelessWidget {
                 width: double.infinity,
                 height: 165,
                 decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.white)),
+                    border: Border.all(width: 1, color: colorScheme.secondary)),
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Icon(
+                       Icon(
                         CupertinoIcons.location,
                         size: 30,
-                        color: Colors.white,
+                        color: colorScheme.secondary,
                       ),
                       const SizedBox(width: 16),
                       Expanded(
@@ -52,7 +54,7 @@ class CheckOutPage extends StatelessWidget {
                               "Shipping Address",
                               style: GoogleFonts.montserrat(
                                 fontSize: 16,
-                                color: Colors.white,
+                                color: colorScheme.secondary,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
@@ -61,7 +63,7 @@ class CheckOutPage extends StatelessWidget {
                               'Unit 308, 3/F FEMII Building, A. Soriano Jr. Avenue, Manila, Metro Manila, Philippines',
                               style: GoogleFonts.montserrat(
                                 fontSize: 14,
-                                color: Colors.white,
+                                color: colorScheme.secondary,
                               ),
                             ),
                             const SizedBox(height: 15),
@@ -70,7 +72,7 @@ class CheckOutPage extends StatelessWidget {
                                 Text(
                                   'Jhoanna Robles',
                                   style: GoogleFonts.montserrat(
-                                      fontSize: 14, color: Colors.white),
+                                      fontSize: 14, color: colorScheme.secondary),
                                 ),
                                 const SizedBox(width: 15),
                                 Text(
@@ -113,7 +115,7 @@ class CheckOutPage extends StatelessWidget {
                         Text(
                           'Libre Le Parfum',
                           style: GoogleFonts.montserrat(
-                              fontSize: 16, color: Colors.white),
+                              fontSize: 16, color: colorScheme.secondary),
                         ),
                         const SizedBox(height: 2),
                         Text(
@@ -128,7 +130,7 @@ class CheckOutPage extends StatelessWidget {
                             Text(
                               'PHP 7,500.00',
                               style: GoogleFonts.montserrat(
-                                  fontSize: 16, color: Colors.white),
+                                  fontSize: 16, color: colorScheme.secondary),
                             ),
                             Text(
                               'x1',
@@ -151,7 +153,7 @@ class CheckOutPage extends StatelessWidget {
                   Text(
                     'Select Shipping',
                     style: GoogleFonts.montserrat(
-                        fontSize: 16, color: Colors.white),
+                        fontSize: 16, color: colorScheme.secondary),
                   ),
                   Text(
                     'See all Options',
@@ -166,7 +168,7 @@ class CheckOutPage extends StatelessWidget {
               child: Container(
                   height: 85,
                   decoration: BoxDecoration(
-                      border: Border.all(width: 1, color: Colors.white)),
+                      border: Border.all(width: 1, color: colorScheme.secondary)),
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Expanded(
@@ -176,7 +178,7 @@ class CheckOutPage extends StatelessWidget {
                           Text(
                             'Express',
                             style: GoogleFonts.montserrat(
-                                fontSize: 16, color: Colors.white),
+                                fontSize: 16, color: colorScheme.secondary),
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -189,7 +191,7 @@ class CheckOutPage extends StatelessWidget {
                               Text(
                                 'PHP 250.00',
                                 style: GoogleFonts.montserrat(
-                                    fontSize: 14, color: Colors.white),
+                                    fontSize: 14, color: colorScheme.secondary),
                               )
                             ],
                           )
@@ -207,7 +209,7 @@ class CheckOutPage extends StatelessWidget {
                     'Subtotal, (1 item):',
                     style: GoogleFonts.montserrat(
                       fontSize: 16,
-                      color: Colors.white,
+                      color: colorScheme.secondary,
                     ),
                   ),
                   Text(
@@ -235,7 +237,7 @@ class CheckOutPage extends StatelessWidget {
                   child: Text(
                     'Payment Method',
                     style: GoogleFonts.montserrat(
-                        fontSize: 16, color: Colors.white),
+                        fontSize: 16, color: colorScheme.secondary),
                     textAlign: TextAlign.start,
                   )),
             ),
@@ -252,22 +254,22 @@ class CheckOutPage extends StatelessWidget {
                           height: 120.0,
                           decoration: BoxDecoration(
                               border:
-                                  Border.all(width: 1, color: Colors.white)),
+                                  Border.all(width: 1, color: colorScheme.secondary)),
                           child: Padding(
                             padding: const EdgeInsets.all(12.0),
                             child: Column(
                               children: [
                                 Row(
                                   children: [
-                                    const Icon(
+                                     Icon(
                                       CupertinoIcons.money_dollar_circle,
                                       size: 30,
-                                      color: Colors.white,
+                                      color: colorScheme.secondary,
                                     ),
                                     Text(
                                       'Cash',
                                       style: GoogleFonts.montserrat(
-                                          fontSize: 16, color: Colors.white),
+                                          fontSize: 16, color: colorScheme.secondary),
                                     )
                                   ],
                                 ),
@@ -290,23 +292,23 @@ class CheckOutPage extends StatelessWidget {
                           height: 120.0,
                           decoration: BoxDecoration(
                               border:
-                                  Border.all(width: 1, color: Colors.white)),
+                                  Border.all(width: 1, color: colorScheme.secondary)),
                           child: Padding(
                             padding: const EdgeInsets.all(12.0),
                             child: Column(
                               children: [
                                 Row(
                                   children: [
-                                    const Icon(
+                                    Icon(
                                       CupertinoIcons.creditcard,
                                       size: 30,
-                                      color: Colors.white,
+                                      color: colorScheme.secondary,
                                     ),
                                     const SizedBox(width: 6),
                                     Text(
                                       'Bank Transfer',
                                       style: GoogleFonts.montserrat(
-                                          fontSize: 16, color: Colors.white),
+                                          fontSize: 16, color: colorScheme.secondary),
                                     )
                                   ],
                                 ),
@@ -329,22 +331,22 @@ class CheckOutPage extends StatelessWidget {
                           height: 120.0,
                           decoration: BoxDecoration(
                               border:
-                                  Border.all(width: 1, color: Colors.white)),
+                                  Border.all(width: 1, color: colorScheme.secondary)),
                           child: Padding(
                             padding: const EdgeInsets.all(12.0),
                             child: Column(
                               children: [
                                 Row(
                                   children: [
-                                    const Icon(
+                                    Icon(
                                       CupertinoIcons.layers,
                                       size: 30,
-                                      color: Colors.white,
+                                      color: colorScheme.secondary,
                                     ),
                                     Text(
                                       'Installment',
                                       style: GoogleFonts.montserrat(
-                                          fontSize: 16, color: Colors.white),
+                                          fontSize: 16, color: colorScheme.secondary),
                                     )
                                   ],
                                 ),
@@ -369,11 +371,11 @@ class CheckOutPage extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Colors.black,
+        decoration: BoxDecoration(
+          color: colorScheme.primary,
           border: Border(
             top: BorderSide(
-              color: Colors.white,
+              color: colorScheme.secondary,
               width: 1.0,
             ),
           ),
@@ -401,7 +403,7 @@ class CheckOutPage extends StatelessWidget {
                       Text(
                         'PHP 7,750.00',
                         style: GoogleFonts.montserrat(
-                            fontSize: 16, color: Colors.white),
+                            fontSize: 16, color: colorScheme.secondary),
                       )
                     ],
                   ),
@@ -428,7 +430,7 @@ class CheckOutPage extends StatelessWidget {
                         'Place Order',
                         style: GoogleFonts.montserrat(
                           fontSize: 16,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                         ),
                       ),
                     ),
@@ -448,12 +450,14 @@ class OrderIsPlaced extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+        final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: colorScheme.primary,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: colorScheme.primary,
         elevation: 0,
-        foregroundColor: Colors.white,
+        foregroundColor: colorScheme.secondary,
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -474,7 +478,7 @@ class OrderIsPlaced extends StatelessWidget {
                     'YOUR ORDER HAS BEEN PLACED',
                     style: GoogleFonts.montserrat(
                       fontSize: 30,
-                      color: Colors.white,
+                      color: colorScheme.secondary,
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -487,7 +491,7 @@ class OrderIsPlaced extends StatelessWidget {
                 width: double.infinity,
                 height: 200,
                 decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.white),
+                  border: Border.all(width: 1, color: colorScheme.secondary),
                 ),
                 child: Row(
                   children: [
@@ -504,7 +508,7 @@ class OrderIsPlaced extends StatelessWidget {
                             'Libre Le Parfum',
                             style: GoogleFonts.montserrat(
                               fontSize: 16,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                           Text(
@@ -519,14 +523,14 @@ class OrderIsPlaced extends StatelessWidget {
                             'Subtotal: PHP 7,750.00',
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                           Text(
                             'Order ID: 12312321421',
                             style: GoogleFonts.montserrat(
                               fontSize: 14,
-                              color: Colors.white,
+                              color: colorScheme.secondary,
                             ),
                           ),
                         ],
@@ -553,7 +557,7 @@ class OrderIsPlaced extends StatelessWidget {
                         'ORDER DETAILS',
                         style: GoogleFonts.montserrat(
                           fontSize: 16,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                         ),
                       ),
                     ),
@@ -571,7 +575,7 @@ class OrderIsPlaced extends StatelessWidget {
                   width: double.infinity,
                   height: 60,
                   decoration: BoxDecoration(
-                    border: Border.all(width: 1, color: Colors.white),
+                    border: Border.all(width: 1, color: colorScheme.secondary),
                   ),
                   child: Center(
                     child: FittedBox(
@@ -580,7 +584,7 @@ class OrderIsPlaced extends StatelessWidget {
                         'CONTINUE SHOPPING',
                         style: GoogleFonts.montserrat(
                           fontSize: 16,
-                          color: Colors.white,
+                          color: colorScheme.secondary,
                         ),
                       ),
                     ),
