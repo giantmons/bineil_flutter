@@ -15,63 +15,11 @@ class PerfumeDetailsPage extends StatefulWidget {
 
 class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
   bool isFavorite = false;
-  final TextEditingController _textController = TextEditingController();
 
   void toggleFavorite() {
     setState(() {
       isFavorite = !isFavorite;
     });
-  }
-
-  void showInputDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        final theme = Theme.of(context);
-        final colorScheme = theme.colorScheme;
-        return AlertDialog(
-          backgroundColor: colorScheme.primary,
-          title: Text(
-            'Enter your question',
-            style: GoogleFonts.montserrat(
-                color: colorScheme.secondary, fontSize: 16),
-          ),
-          content: TextField(
-            style: GoogleFonts.montserrat(
-              color: colorScheme.secondary,
-              fontSize: 16,
-            ),
-            controller: _textController,
-            decoration: InputDecoration(
-                hintText: "Type here...",
-                hintStyle: GoogleFonts.montserrat(
-                  color: Colors.grey,
-                  fontSize: 16,
-                )),
-          ),
-          actions: <Widget>[
-            TextButton(
-              child: Text(
-                'Cancel',
-                style: GoogleFonts.montserrat(
-                    fontSize: 16, color: colorScheme.secondary),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-            TextButton(
-              child: Text(
-                'Enter',
-                style: GoogleFonts.montserrat(
-                    fontSize: 16, color: colorScheme.secondary),
-              ),
-              onPressed: () {},
-            ),
-          ],
-        );
-      },
-    );
   }
 
   @override
@@ -145,12 +93,24 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                           ),
                         ],
                       ),
-                      Text(
-                        widget.perfume.brand,
-                        style: GoogleFonts.montserrat(
-                          color: Colors.grey,
-                          fontSize: 14,
-                        ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            widget.perfume.brand,
+                            style: GoogleFonts.montserrat(
+                              color: Colors.grey,
+                              fontSize: 14,
+                            ),
+                          ),
+                          Text(
+                            widget.perfume.category,
+                            style: GoogleFonts.montserrat(
+                              color: Colors.grey,
+                              fontSize: 14,
+                            ),
+                          )
+                        ],
                       ),
                     ],
                   ),
@@ -253,7 +213,7 @@ class _PerfumeDetailsPageState extends State<PerfumeDetailsPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
-                          padding: EdgeInsets.all(16.0),
+                          padding: const EdgeInsets.all(16.0),
                           child: CircleAvatar(
                             radius: 20, // Adjust radius as needed
                             backgroundColor: colorScheme

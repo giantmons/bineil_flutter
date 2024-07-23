@@ -7,6 +7,7 @@ class Perfume {
   String size;
   String rating;
   String review;
+  String category;
 
   Perfume(
       {required this.name,
@@ -16,5 +17,6 @@ class Perfume {
       required this.description,
       required this.size,
       required this.rating,
-      required this.review});
+      required this.review,
+      required this.category});
 }

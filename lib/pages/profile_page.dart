@@ -486,65 +486,65 @@ class MyWishlistPage extends StatelessWidget {
 
   final List<Perfume> perfumeList = [
     Perfume(
-      name: 'Good Girl Blush',
-      brand: 'Carolina Herrera',
-      price: 'PHP 7,000.00',
-      imagePath: 'images/good.png',
-      description:
-          'A fresh and floral fragrance with a hint of citrus, balanced by a creamy vanilla base. Ideal for the charming and confident woman who loves to make a statement.',
-      size: '50ml',
-      rating: '4.3',
-      review:
-          'Good Girl Blush is a charming and confident fragrance with a fresh floral and vanilla blend. It’s great for making a statement but may not last as long as expected.',
-    ),
+        name: 'Good Girl Blush',
+        brand: 'Carolina Herrera',
+        price: 'PHP 7,000.00',
+        imagePath: 'images/good.png',
+        description:
+            'A fresh and floral fragrance with a hint of citrus, balanced by a creamy vanilla base. Ideal for the charming and confident woman who loves to make a statement.',
+        size: '50ml',
+        rating: '4.3',
+        review:
+            'Good Girl Blush is a charming and confident fragrance with a fresh floral and vanilla blend. It’s great for making a statement but may not last as long as expected.',
+        category: 'Female'),
     Perfume(
-      name: 'J\'adore L\'Or',
-      brand: 'Dior',
-      price: 'PHP 15,000.00',
-      imagePath: 'images/jadore.png',
-      description:
-          'A luxurious and opulent fragrance with rich floral notes and a warm, sensual base. Perfect for the elegant and sophisticated woman who loves to indulge.',
-      size: '50ml',
-      rating: '4.8',
-      review:
-          'J\'adore L\'Or is a luxurious scent with rich floral and warm notes. It’s ideal for indulgence and sophistication but comes with a high price tag.',
-    ),
+        name: 'J\'adore L\'Or',
+        brand: 'Dior',
+        price: 'PHP 15,000.00',
+        imagePath: 'images/jadore.png',
+        description:
+            'A luxurious and opulent fragrance with rich floral notes and a warm, sensual base. Perfect for the elegant and sophisticated woman who loves to indulge.',
+        size: '50ml',
+        rating: '4.8',
+        review:
+            'J\'adore L\'Or is a luxurious scent with rich floral and warm notes. It’s ideal for indulgence and sophistication but comes with a high price tag.',
+        category: 'Female'),
     Perfume(
-      name: 'Her Elixir de Parfum',
-      brand: 'Burberry',
-      price: 'PHP 7,000.00',
-      imagePath: 'images/her.png',
-      description:
-          'A fruity and floral fragrance with a gourmand twist, featuring sweet berry notes and a creamy base. Ideal for the modern woman who loves to embrace her sweet side.',
-      size: '50ml',
-      rating: '4.4',
-      review:
-          'Her Elixir de Parfum is a sweet and fruity fragrance with a creamy base. It’s perfect for those who love a gourmand twist but might be too sweet for some.',
-    ),
+        name: 'Her Elixir de Parfum',
+        brand: 'Burberry',
+        price: 'PHP 7,000.00',
+        imagePath: 'images/her.png',
+        description:
+            'A fruity and floral fragrance with a gourmand twist, featuring sweet berry notes and a creamy base. Ideal for the modern woman who loves to embrace her sweet side.',
+        size: '50ml',
+        rating: '4.4',
+        review:
+            'Her Elixir de Parfum is a sweet and fruity fragrance with a creamy base. It’s perfect for those who love a gourmand twist but might be too sweet for some.',
+        category: 'Female'),
     Perfume(
-      name: 'Gris Charnel Extrait',
-      brand: 'BDK Parfums',
-      price: 'PHP 13,000.00',
-      imagePath: 'images/gris.png',
-      description:
-          'A rich and sophisticated fragrance with a blend of spicy, woody, and creamy notes. Perfect for those who appreciate depth and complexity in their scent.',
-      size: '100ml',
-      rating: '4.6',
-      review:
-          'Gris Charnel Extrait offers a rich and sophisticated scent with a complex blend of spices and wood. It’s ideal for those who appreciate depth, though its price is quite high.',
-    ),
+        name: 'Gris Charnel Extrait',
+        brand: 'BDK Parfums',
+        price: 'PHP 13,000.00',
+        imagePath: 'images/gris.png',
+        description:
+            'A rich and sophisticated fragrance with a blend of spicy, woody, and creamy notes. Perfect for those who appreciate depth and complexity in their scent.',
+        size: '100ml',
+        rating: '4.6',
+        review:
+            'Gris Charnel Extrait offers a rich and sophisticated scent with a complex blend of spices and wood. It’s ideal for those who appreciate depth, though its price is quite high.',
+        category: 'Male'),
     Perfume(
-      name: 'Tobacco Honey',
-      brand: 'Guerlain',
-      price: 'PHP 15,000.00',
-      imagePath: 'images/tobacco.png',
-      description:
-          'A warm and sweet fragrance that combines the richness of honey and tobacco with floral and musky undertones. Ideal for a cozy and intimate setting.',
-      size: '100ml',
-      rating: '4.8',
-      review:
-          'Tobacco Honey is a warm and inviting fragrance with a sweet and musky blend. It’s perfect for cozy settings but comes with a premium price.',
-    ),
+        name: 'Tobacco Honey',
+        brand: 'Guerlain',
+        price: 'PHP 15,000.00',
+        imagePath: 'images/tobacco.png',
+        description:
+            'A warm and sweet fragrance that combines the richness of honey and tobacco with floral and musky undertones. Ideal for a cozy and intimate setting.',
+        size: '100ml',
+        rating: '4.8',
+        review:
+            'Tobacco Honey is a warm and inviting fragrance with a sweet and musky blend. It’s perfect for cozy settings but comes with a premium price.',
+        category: 'Unisex'),
   ];
 
   void navigateToPerfumeDetails(BuildContext context, index) {

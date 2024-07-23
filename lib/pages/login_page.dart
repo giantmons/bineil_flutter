@@ -359,7 +359,7 @@ class _BeneilSignUpFormState extends State<BeneilSignUpForm> {
                     focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: colorScheme.secondary),
                     ),
-                    suffixIcon: Icon(Icons.visibility_off, color: Colors.grey),
+                    suffixIcon: const Icon(Icons.visibility_off, color: Colors.grey),
                   ),
                   validator: _validatePassword,
                 ),
