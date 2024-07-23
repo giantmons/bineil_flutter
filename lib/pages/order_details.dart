@@ -24,186 +24,166 @@ class OrderDetailsPage extends StatelessWidget {
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 55.0, vertical: 12),
-              child: Container(
-                width: double.infinity,
-                height: 150,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: colorScheme.secondary),
-                ),
-                child: Row(
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.all(26.0),
-                      child: Image(image: AssetImage('images/libre.png')),
-                    ),
-                    Flexible(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Libre Le Parfum',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 16,
-                              color: colorScheme.secondary,
-                            ),
-                          ),
-                          Text(
-                            'Yves Saint Laurent',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 14,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                          Text(
-                            'Order ID: 12312321421',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 14,
-                              color: colorScheme.secondary,
-                            ),
-                          ),
-                        ],
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12),
+                child: Container(
+                  width: double.infinity,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: colorScheme.secondary),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Image.asset('images/libre.png', fit: BoxFit.cover),
                       ),
-                    )
-                  ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Libre Le Parfum',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 16,
+                                color: colorScheme.secondary,
+                              ),
+                            ),
+                            Text(
+                              'Yves Saint Laurent',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              'Order ID: 12312321421',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 14,
+                                color: colorScheme.secondary,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(24.0),
-              child: Divider(
-                thickness: 1,
-                color: Colors.grey,
+              const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Divider(
+                  thickness: 1,
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36.0),
-              child: Row(
-                children: [
-                  const Icon(CupertinoIcons.location,
-                      color: Colors.orange, size: 30),
-                  const SizedBox(width: 30),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'From',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        Text(
-                          'Rm. 202 Buendia Shopping Plaza Gil Puyat Avenue 1200, Makati City, Metro Manila, Philippines',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14,
-                            color: colorScheme.secondary,
-                          ),
-                          overflow: TextOverflow.visible,
-                          softWrap: true,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              _buildDetailRow(
+                context,
+                icon: CupertinoIcons.location,
+                title: 'From',
+                detail: 'Rm. 202 Buendia Shopping Plaza Gil Puyat Avenue 1200, Makati City, Metro Manila, Philippines',
               ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36.0),
-              child: Row(
-                children: [
-                  const Icon(CupertinoIcons.car,
-                      color: Colors.orange, size: 30),
-                  const SizedBox(width: 30),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Send to',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        Text(
-                          'Unit 308, 3/F FEMII Building, A. Soriano Jr. Avenue, Manila, Metro Manila, Philippines',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14,
-                            color: colorScheme.secondary,
-                          ),
-                          overflow: TextOverflow.visible,
-                          softWrap: true,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              _buildDetailRow(
+                context,
+                icon: CupertinoIcons.car,
+                title: 'Send to',
+                detail: 'Unit 308, 3/F FEMII Building, A. Soriano Jr. Avenue, Manila, Metro Manila, Philippines',
               ),
-            ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 36.0),
-              child: Row(
-                children: [
-                  const Icon(CupertinoIcons.cube,
-                      color: Colors.orange, size: 30),
-                  const SizedBox(width: 30),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Weight',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14,
-                            color: Colors.grey,
-                          ),
-                        ),
-                        Text(
-                          '1.45 kg',
-                          style: GoogleFonts.montserrat(
-                            fontSize: 14,
-                            color: colorScheme.secondary,
-                          ),
-                          overflow: TextOverflow.visible,
-                          softWrap: true,
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
+              _buildDetailRow(
+                context,
+                icon: CupertinoIcons.cube,
+                title: 'Weight',
+                detail: '1.45 kg',
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.all(24.0),
-              child: Divider(
-                thickness: 1,
-                color: Colors.grey,
+              const Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Divider(
+                  thickness: 1,
+                  color: Colors.grey,
+                ),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 36.0),
-              child: HorizontalProgressBar(
-                progress: 0.6, // Set the progress value here (0.0 to 1.0)
-                icons: [
-                  CupertinoIcons.cart, // Ordered
-                  CupertinoIcons.cube_box, // Processed
-                  CupertinoIcons.car, // Shipped
-                  CupertinoIcons.home // Delivered
-                ], // Define your order status icons here
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                child: HorizontalProgressBar(
+                  progress: 0.6, // Set the progress value here (0.0 to 1.0)
+                  icons: [
+                    CupertinoIcons.cart, // Ordered
+                    CupertinoIcons.cube_box, // Processed
+                    CupertinoIcons.car, // Shipped
+                    CupertinoIcons.home // Delivered
+                  ], // Define your order status icons here
+                ),
               ),
-            ),
-          ],
+              const SizedBox(height: 15),
+              _buildDetailRow(
+                context,
+                icon: CupertinoIcons.check_mark,
+                title: 'Order is processed',
+                detail: 'Waiting for the order to be packed',
+              ),
+              _buildDetailRow(
+                context,
+                icon: CupertinoIcons.check_mark,
+                title: 'Order is packed',
+                detail: 'Waiting for the order to be picked up by the delivery service',
+              ),
+              _buildDetailRow(
+                context,
+                icon: CupertinoIcons.xmark,
+                title: 'Towards Destination',
+                detail: 'Waiting for the order to reach the final destination',
+              ),
+              _buildDetailRow(
+                context,
+                icon: CupertinoIcons.xmark,
+                title: 'Order is Delivered',
+                detail: 'The order is successfully delivered to the target address',
+              ),
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget _buildDetailRow(BuildContext context, {required IconData icon, required String title, required String detail}) {
+    final colorScheme = Theme.of(context).colorScheme;
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.orange, size: 30),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: GoogleFonts.montserrat(
+                    fontSize: 14,
+                    color: Colors.grey,
+                  ),
+                ),
+                Text(
+                  detail,
+                  style: GoogleFonts.montserrat(
+                    fontSize: 14,
+                    color: colorScheme.secondary,
+                  ),
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -221,35 +201,39 @@ class HorizontalProgressBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final colorScheme = theme.colorScheme;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: icons.asMap().entries.map((entry) {
-        int index = entry.key;
-        IconData icon = entry.value;
-        bool isCompleted = (index + 1) / icons.length <= progress;
-
+    final colorScheme = Theme.of(context).colorScheme;
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final itemWidth = (constraints.maxWidth - (icons.length - 1) * 50) / icons.length;
         return Row(
-          children: [
-            CircleAvatar(
-              radius: 24,
-              backgroundColor: isCompleted ? Colors.orange : Colors.grey,
-              child: Icon(
-                icon,
-                size: 25,
-                color: colorScheme.secondary,
-              ),
-            ),
-            if (index < icons.length - 1)
-              Container(
-                width: 50, // Adjust the width as needed
-                height: 2,
-                color: isCompleted ? Colors.orange : Colors.grey,
-              ),
-          ],
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: icons.asMap().entries.map((entry) {
+            int index = entry.key;
+            IconData icon = entry.value;
+            bool isCompleted = (index + 1) / icons.length <= progress;
+
+            return Row(
+              children: [
+                CircleAvatar(
+                  radius: 24,
+                  backgroundColor: isCompleted ? Colors.orange : Colors.grey,
+                  child: Icon(
+                    icon,
+                    size: 25,
+                    color: colorScheme.secondary,
+                  ),
+                ),
+                if (index < icons.length - 1)
+                  Container(
+                    width: itemWidth,
+                    height: 2,
+                    color: isCompleted ? Colors.orange : Colors.grey,
+                  ),
+              ],
+            );
+          }).toList(),
         );
-      }).toList(),
+      },
     );
   }
 }

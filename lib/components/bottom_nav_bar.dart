@@ -38,8 +38,8 @@ class MyBottomNavBar extends StatelessWidget {
                 ),
               ),
               GButton(
-                icon: CupertinoIcons.heart,
-                text: 'Favorites',
+                icon: CupertinoIcons.flame,
+                text: 'Popular',
                 textStyle: GoogleFonts.montserrat(
                   color: Colors.white,
                 ),

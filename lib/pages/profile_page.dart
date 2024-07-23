@@ -152,7 +152,6 @@ class _ProfilePageState extends State<ProfilePage> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
             child: Container(
-              height: 320,
               width: double.infinity,
               decoration: BoxDecoration(
                   border: Border.all(
@@ -253,7 +252,8 @@ class _ProfilePageState extends State<ProfilePage> {
                         size: 30,
                       ),
                     ),
-                  )
+                  ),
+                  const SizedBox(height: 10),
                 ],
               ),
             ),
@@ -365,6 +365,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 fontSize: 14,
                 color: Colors.blueAccent,
               ),
+              textAlign: TextAlign.center,
             ),
           ),
           const SizedBox(height: 36)
@@ -420,7 +421,7 @@ class MyCartPage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 55.0, vertical: 12),
+            padding: const EdgeInsets.all(12.0),
             child: GestureDetector(
               onTap: () {
                 Navigator.push(
@@ -428,53 +429,59 @@ class MyCartPage extends StatelessWidget {
                     MaterialPageRoute(
                         builder: (context) => const OrderDetailsPage()));
               },
-              child: Container(
-                width: double.infinity,
-                height: 150,
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: colorScheme.secondary),
-                ),
-                child: Row(
-                  children: [
-                    const Padding(
-                      padding: EdgeInsets.all(26.0),
-                      child: Image(image: AssetImage('images/libre.png')),
-                    ),
-                    Flexible(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Libre Le Parfum',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 16,
-                              color: colorScheme.secondary,
-                            ),
-                          ),
-                          Text(
-                            'Yves Saint Laurent',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 14,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          const SizedBox(height: 20),
-                          Text(
-                            'Order ID: 12312321421',
-                            style: GoogleFonts.montserrat(
-                              fontSize: 14,
-                              color: colorScheme.secondary,
-                            ),
-                          ),
-                        ],
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12),
+                child: Container(
+                  width: double.infinity,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: colorScheme.secondary),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child:
+                            Image.asset('images/libre.png', fit: BoxFit.cover),
                       ),
-                    )
-                  ],
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Libre Le Parfum',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 16,
+                                color: colorScheme.secondary,
+                              ),
+                            ),
+                            Text(
+                              'Yves Saint Laurent',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              'Order ID: 12312321421',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 14,
+                                color: colorScheme.secondary,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
             ),
-          ),
+          )
         ],
       ),
     );

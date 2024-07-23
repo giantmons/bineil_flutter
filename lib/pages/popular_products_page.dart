@@ -21,7 +21,7 @@ final List<Perfume> perfumeList = [
     description: 'A classic fragrance with a blend of floral and woody notes.',
     size: '50ml',
     rating: '4.8',
-    review: 'Timeless and elegant, perfect for any occasion. Chanel No. 5 embodies sophistication with its complex blend of rose, jasmine, and sandalwood. It’s a signature scent that has been cherished for decades, making it a staple in any fragrance collection.',
+    review: 'Timeless and elegant, perfect for any occasion. Chanel No. 5 embodies sophistication with its complex blend of rose, jasmine, and sandalwood.',
     category: 'Female',
   ),
   Perfume(

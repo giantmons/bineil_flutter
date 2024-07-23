@@ -52,7 +52,7 @@ class _CartPageState extends State<CartPage> {
                 imagePath: 'images/cherry.png',
                 name: 'Cherry Smoke',
                 brand: 'Tom Ford',
-                price: 'PHP 15,000.00'),
+                price: 'PHP 15,000.0'),
             CartItem(
                 imagePath: 'images/gio.png',
                 name: 'Acqua di Giò Profumo',
@@ -67,7 +67,7 @@ class _CartPageState extends State<CartPage> {
                 imagePath: 'images/santal.png',
                 name: 'Santal 33',
                 brand: 'Le Labo',
-                price: 'PHP 15,000.00'),
+                price: 'PHP 15,000.0'),
           ],
         ),
       ),
