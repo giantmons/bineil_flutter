@@ -486,6 +486,68 @@ class MyCartPage extends StatelessWidget {
                 ),
               ),
             ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const OrderIsCompleted()));
+              },
+              child: Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12),
+                child: Container(
+                  width: double.infinity,
+                  height: 150,
+                  decoration: BoxDecoration(
+                    border: Border.all(width: 1, color: colorScheme.secondary),
+                  ),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child:
+                            Image.asset('images/oud.png', fit: BoxFit.cover),
+                      ),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              'Oud Wood',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 16,
+                                color: colorScheme.secondary,
+                              ),
+                            ),
+                            Text(
+                              'Tom Ford',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 14,
+                                color: Colors.grey,
+                              ),
+                            ),
+                            const SizedBox(height: 12),
+                            Text(
+                              'Order ID: 14352624432',
+                              style: GoogleFonts.montserrat(
+                                fontSize: 14,
+                                color: colorScheme.secondary,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
           )
         ],
       ),

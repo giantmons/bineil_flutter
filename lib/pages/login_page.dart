@@ -150,8 +150,15 @@ class _BeneilLoginFormState extends State<BeneilLoginForm> {
                             _rememberMe = value!;
                           });
                         },
-                        activeColor: colorScheme.secondary,
-                        checkColor: colorScheme.primary,
+                        fillColor: WidgetStateProperty.resolveWith<Color?>(
+                          (Set<WidgetState> states) {
+                            if (states.contains(WidgetState.selected)) {
+                              return colorScheme.secondary; 
+                            }
+                            return Colors.grey; 
+                          },
+                        ),
+                        checkColor: colorScheme.primary, 
                       ),
                       Expanded(
                         child: Text(
