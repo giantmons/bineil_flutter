@@ -1,3 +1,4 @@
+// ignore_for_file: library_private_types_in_public_api
 import 'package:appdev_proj/pages/check_out.dart';
 import 'package:appdev_proj/pages/home_page.dart';
 import 'package:flutter/material.dart';
@@ -192,11 +193,11 @@ class _CartItemState extends State<CartItem> {
     final colorScheme = theme.colorScheme;
     return Dismissible(
       key:
-          UniqueKey(), // Use UniqueKey for Dismissible to distinguish between items
+          UniqueKey(), 
       direction:
-          DismissDirection.endToStart, // Swipe from right to left to dismiss
+          DismissDirection.endToStart, 
       background: Container(
-        color: Colors.red, // Background color when swiping
+        color: Colors.red,
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.only(right: 20.0),
         child: Icon(
@@ -205,7 +206,6 @@ class _CartItemState extends State<CartItem> {
         ),
       ),
       onDismissed: (direction) {
-        // Handle item dismissal here (e.g., remove item from cart)
         ScaffoldMessenger.of(context).showSnackBar(
           const SnackBar(content: Text('Item dismissed')),
         );

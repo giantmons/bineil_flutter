@@ -1,3 +1,4 @@
+import 'package:appdev_proj/pages/cart_page.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -442,7 +443,7 @@ class EntryPage extends StatelessWidget {
         name: 'Ani X',
         brand: 'Nishane',
         price: 'PHP 14,000.00',
-        imagePath: 'images/anix.png',
+        imagePath: 'images/anixparis.png',
         description:
             'A versatile and elegant fragrance with a fresh opening, floral heart, and a warm, woody base. Ideal for any occasion, it embodies sophistication and charm.',
         size: '50ml',
@@ -752,10 +753,12 @@ class MenPerfumesPage extends StatelessWidget {
             height: 1.0,
           ),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Icon(CupertinoIcons.bag),
+            padding: const EdgeInsets.all(16.0),
+            child: GestureDetector( onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const CartPage()));
+            },child: const Icon(CupertinoIcons.bag)),
           )
         ],
       ),
@@ -812,10 +815,12 @@ class WomenPerfumesPage extends StatelessWidget {
             height: 1.0,
           ),
         ),
-        actions: const [
+        actions:[
           Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Icon(CupertinoIcons.bag),
+            padding: const EdgeInsets.all(16.0),
+            child: GestureDetector( onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const CartPage()));
+            },child: const Icon(CupertinoIcons.bag)),
           )
         ],
       ),
@@ -860,7 +865,7 @@ class UnisexPerfumesPage extends StatelessWidget {
         backgroundColor: colorScheme.primary,
         title: Center(
           child: Text(
-            'Men Perfumes',
+            'Unisex Perfumes',
             style: GoogleFonts.montserrat(
                 fontSize: 16, color: colorScheme.secondary),
           ),
@@ -872,10 +877,12 @@ class UnisexPerfumesPage extends StatelessWidget {
             height: 1.0,
           ),
         ),
-        actions: const [
+        actions: [
           Padding(
-            padding: EdgeInsets.all(16.0),
-            child: Icon(CupertinoIcons.bag),
+            padding: const EdgeInsets.all(16.0),
+            child: GestureDetector( onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => const CartPage()));
+            },child: const Icon(CupertinoIcons.bag)),
           )
         ],
       ),
@@ -908,6 +915,7 @@ class ImageCarousel extends StatefulWidget {
   const ImageCarousel({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _ImageCarouselState createState() => _ImageCarouselState();
 }
 

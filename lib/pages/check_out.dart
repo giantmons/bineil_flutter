@@ -458,59 +458,6 @@ class CheckOutPage extends StatelessWidget {
     );
   }
 
-  Widget _buildPaymentOption(
-      BuildContext context, {
-      required IconData icon,
-      required String title,
-      required String description,
-  }) {
-    final colorScheme = Theme.of(context).colorScheme;
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Container(
-        width: 275.0,
-        height: 120.0,
-        decoration: BoxDecoration(
-          border: Border.all(width: 1, color: colorScheme.secondary),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                children: [
-                  Icon(
-                    icon,
-                    size: 30,
-                    color: colorScheme.secondary,
-                  ),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      title,
-                      style: GoogleFonts.montserrat(
-                          fontSize: 16, color: colorScheme.secondary),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  description,
-                  style: GoogleFonts.montserrat(
-                      fontSize: 14, color: Colors.grey),
-                  overflow: TextOverflow.ellipsis,
-                ),
-              )
-            ],
-          ),
-        ),
-      ),
-    );
-  }
 }
 
 

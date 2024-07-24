@@ -1,4 +1,3 @@
-/* import 'package:appdev_proj/pages/home_page.dart'; */
 import 'package:appdev_proj/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

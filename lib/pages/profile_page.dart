@@ -1,5 +1,5 @@
 // ignore_for_file: use_key_in_widget_constructors, library_private_types_in_public_api
-
+import 'package:appdev_proj/pages/login_page.dart';
 import 'package:appdev_proj/pages/order_details.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -323,18 +323,23 @@ class _ProfilePageState extends State<ProfilePage> {
           const SizedBox(height: 8),
           Padding(
             padding: const EdgeInsets.all(24.0),
-            child: Container(
-              width: double.infinity,
-              height: 60,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(36),
-                color: Colors.orange,
-              ),
-              child: Center(
-                child: Text(
-                  'SIGN OUT',
-                  style: GoogleFonts.montserrat(
-                      fontSize: 16, color: colorScheme.secondary),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const BeneilLoginForm()));
+              },
+              child: Container(
+                width: double.infinity,
+                height: 60,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(36),
+                  color: Colors.orange,
+                ),
+                child: Center(
+                  child: Text(
+                    'SIGN OUT',
+                    style: GoogleFonts.montserrat(
+                        fontSize: 16, color: colorScheme.secondary),
+                  ),
                 ),
               ),
             ),
