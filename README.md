@@ -1,1 +1,1 @@
-Bineil Project
+BINEIL is a mobile application that centralizes exclusive high-end and designer fragrances. It aims to simplify the shopping experience for fragrance enthusiasts by offering detailed product information, reviews, and a user-friendly interface for browsing and purchasing. The platform addresses accessibility challenges by aggregating sought-after fragrances in one convenient location.
